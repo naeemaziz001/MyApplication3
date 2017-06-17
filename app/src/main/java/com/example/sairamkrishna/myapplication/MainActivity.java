@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
     ListView listView ;
@@ -45,13 +46,10 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int itemPosition     = position;
 
+                Intent i = new Intent(getApplicationContext(), PlayMusicActivity.class);
+                startActivity(i);
 
-                String  itemValue    = (String) listView.getItemAtPosition(position);
 
-
-                Toast.makeText(getApplicationContext(),
-                        "Position :"+itemPosition+"  ListItem : " +itemValue , Toast.LENGTH_LONG)
-                        .show();
             }
 
 
