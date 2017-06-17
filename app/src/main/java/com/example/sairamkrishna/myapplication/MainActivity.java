@@ -39,12 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setAdapter(adapter);
 
-
         listView.setOnItemClickListener(new OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                int itemPosition     = position;
+               // int itemPosition     = position;
 
                 Intent i = new Intent(getApplicationContext(), PlayMusicActivity.class);
                 startActivity(i);
