@@ -3,7 +3,12 @@
     package="com.example.sairamkrishna.myapplication">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="true" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,6 +30,10 @@
             android:name=".PlayMusicActivity"
             android:label="@string/title_activity_play_music"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FlashActivity"
+
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <service android:name=".HeadphoneService"></service>
 
@@ -32,6 +41,10 @@
             android:name=".Installed_item_activity"
             android:label="@string/title_activity_installed_item_activity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <service
+            android:name=".FlashService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

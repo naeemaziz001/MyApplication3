@@ -13,7 +13,7 @@ import android.content.IntentFilter;
 
 public class HeadphoneService extends Service {
     private  IBinder vplug_binder;
-    private  BroadcastReceiver vplug_receiver;
+    public static   BroadcastReceiver vplug_receiver;
     SharedPreferences sharedpreferences;
 
     public void onCreate() {
@@ -61,7 +61,7 @@ public class HeadphoneService extends Service {
             return HeadphoneService.this;
         }
     }
-    public void unregisterrFunction() {
+    public  void  unregisterrFunction() {
 
         unregisterReceiver(this.vplug_receiver);
     }

@@ -1,11 +1,8 @@
 package com.example.sairamkrishna.myapplication;
 
-import android.content.IntentFilter;
+
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.content.pm.PackageManager;
 import android.view.View;
@@ -101,12 +98,13 @@ public class PlayMusicActivity extends AppCompatActivity {
                 }else{
 
 
+
                     editor.putInt("playerdata", 0);
                     editor.apply();
-                    PackageManager pm = getApplicationContext().getPackageManager();
+                   /* PackageManager pm = getApplicationContext().getPackageManager();
                     ComponentName component = new ComponentName(getApplicationContext(), HeadphoneService.class);
                     pm.setComponentEnabledSetting(component , PackageManager.COMPONENT_ENABLED_STATE_DISABLED , PackageManager.DONT_KILL_APP);
-
+*/
                 }
 
             }

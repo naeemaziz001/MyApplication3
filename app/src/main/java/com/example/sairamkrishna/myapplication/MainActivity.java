@@ -1,5 +1,6 @@
 package com.example.sairamkrishna.myapplication;
 
+import android.hardware.Camera;
 import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
@@ -8,10 +9,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Toast;
 import android.content.Intent;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+
     ListView listView ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,23 +33,29 @@ public class MainActivity extends AppCompatActivity {
                 "working..."
         };
 
-
-
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, values);
-
-
-
-        listView.setAdapter(adapter);
+         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               // int itemPosition     = position;
 
-                Intent i = new Intent(getApplicationContext(), PlayMusicActivity.class);
-                startActivity(i);
+                if(position==0) {
+                    Intent i = new Intent(getApplicationContext(), PlayMusicActivity.class);
+                    startActivity(i);
+                }
+                else if(position==1)
+                {
+                    Intent i = new Intent(getApplicationContext(), FlashActivity.class);
+                    startActivity(i);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Not Implemented Yet",
+                            Toast.LENGTH_SHORT).show();
+                }
 
 
             }
