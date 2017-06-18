@@ -13,7 +13,7 @@ import android.content.IntentFilter;
 
 public class HeadphoneService extends Service {
     private  IBinder vplug_binder;
-    public static   BroadcastReceiver vplug_receiver;
+    public static BroadcastReceiver vplug_receiver;
     SharedPreferences sharedpreferences;
 
     public void onCreate() {

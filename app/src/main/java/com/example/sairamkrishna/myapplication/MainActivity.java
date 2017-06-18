@@ -13,8 +13,6 @@ import android.content.Intent;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
-
     ListView listView ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +21,12 @@ public class MainActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.list);
 
         // Defined Array values to show in ListView
-        String[] values = new String[] { "Play Media",
+        String[] values = new String[] {
+                "Play Media",
                 "FlashLight",
+                "Notify When Charged",
                 "Find My Phone",
                 "Send Location",
-                "Notify When Charged",
                 "Catch Thief",
                 "Notify when Power connects",
                 "working..."
@@ -42,18 +41,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                Intent i;
                 if(position==0) {
-                    Intent i = new Intent(getApplicationContext(), PlayMusicActivity.class);
+                    i = new Intent(getApplicationContext(), PlayMusicActivity.class);
                     startActivity(i);
                 }
                 else if(position==1)
                 {
-                    Intent i = new Intent(getApplicationContext(), FlashActivity.class);
+                    i = new Intent(getApplicationContext(), FlashActivity.class);
+                    startActivity(i);
+                }
+                else if (position == 2)
+                {
+                    i = new Intent(getApplicationContext(), PowerConnectionActivity.class);
                     startActivity(i);
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(), "Not Implemented Yet",
+                     Toast.makeText(getApplicationContext(), "Not Implemented Yet",
                             Toast.LENGTH_SHORT).show();
                 }
 

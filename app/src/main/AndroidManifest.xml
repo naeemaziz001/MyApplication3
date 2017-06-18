@@ -35,7 +35,12 @@
 
             android:theme="@style/AppTheme.NoActionBar" />
 
+        <service android:name=".AlertSoundService"></service>
         <service android:name=".HeadphoneService"></service>
+        <activity
+            android:name=".PowerConnectionActivity"
+            android:label="PowerConnectionActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".Installed_item_activity"
