@@ -22,14 +22,13 @@ public class MainActivity extends AppCompatActivity {
 
         // Defined Array values to show in ListView
         String[] values = new String[] {
-                "Play Media",
-                "FlashLight",
-                "Notify When Charged",
-                "Find My Phone",
-                "Send Location",
-                "Catch Thief",
-                "Notify when Power connects",
-                "working..."
+                "Plug & Go Media",
+                "Shake To Light",
+                "Ringing Connection",
+                "Caught Stealing",
+                "Emergency Location",
+                "Call Recorder"
+
         };
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -41,24 +40,28 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent i;
                 if(position==0) {
-                    i = new Intent(getApplicationContext(), PlayMusicActivity.class);
+                    Intent i = new Intent(getApplicationContext(), PlayMusicActivity.class);
                     startActivity(i);
                 }
                 else if(position==1)
                 {
-                    i = new Intent(getApplicationContext(), FlashActivity.class);
+                    Intent i = new Intent(getApplicationContext(), FlashActivity.class);
                     startActivity(i);
                 }
                 else if (position == 2)
                 {
-                    i = new Intent(getApplicationContext(), PowerConnectionActivity.class);
+                    Intent i = new Intent(getApplicationContext(), PowerConnectionActivity.class);
+                    startActivity(i);
+                }
+                else if(position==3)
+                {
+                    Intent i = new Intent(getApplicationContext(), CaughtStealing.class);
                     startActivity(i);
                 }
                 else
                 {
-                     Toast.makeText(getApplicationContext(), "Not Implemented Yet",
+                    Toast.makeText(getApplicationContext(), "Not Implemented Yet",
                             Toast.LENGTH_SHORT).show();
                 }
 

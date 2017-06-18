@@ -19,7 +19,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="When the phone is shaken, flashlight will be turn ON or OFF."
+        android:text="When someone try to access your phone, after two failed login attempts, the phone will take a selfie of the intruder."
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
